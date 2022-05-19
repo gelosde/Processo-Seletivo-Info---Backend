@@ -1,5 +1,5 @@
-import dotenv = require("dotenv");
-import path = require("path");
+import dotenv from "dotenv";
+import path from "path";
 
 dotenv.config();
 
