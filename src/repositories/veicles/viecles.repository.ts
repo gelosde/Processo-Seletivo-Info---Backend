@@ -25,7 +25,8 @@ class veicleRepoitory implements IveiclesRepo {
     modificatedVeicle: Iveicles
   ) => await this.ormrepository.update(veicleInitStatus, modificatedVeicle);
 
-  deleteVeicle = async (id: string) => await this.ormrepository.delete({ id });
+  deleteVeicle = async (id: string) =>
+    await this.ormrepository.delete({ id: id });
 }
 
 export default veicleRepoitory;

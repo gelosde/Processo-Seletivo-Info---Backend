@@ -21,5 +21,5 @@ export class veicleTable {
   brand: string;
 
   @Column({ type: "date" })
-  year: String;
+  year: string;
 }
