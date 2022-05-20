@@ -2,6 +2,7 @@ import { DeleteResult } from "typeorm";
 
 interface Iveicles {
   id?: string;
+
   plate: string;
 
   chassis: string;
