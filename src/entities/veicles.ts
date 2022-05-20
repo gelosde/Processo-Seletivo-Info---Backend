@@ -5,13 +5,13 @@ export class veicleTable {
   @PrimaryGeneratedColumn("uuid")
   id: string;
 
-  @Column()
+  @Column({ unique: true })
   plate: string;
 
-  @Column()
+  @Column({ length: 17 })
   chassis: string;
 
-  @Column({ length: 11 })
+  @Column()
   renavam: number;
 
   @Column()

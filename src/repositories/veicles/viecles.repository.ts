@@ -12,6 +12,9 @@ class veicleRepoitory implements IveiclesRepo {
   saveVeicle = async (veicle: Iveicles) =>
     await this.ormrepository.save(veicle);
 
+  getOneVeiclePlate = async (plate: string) =>
+    await this.ormrepository.findOne({ plate: plate });
+
   getOneVeicle = async (veicle: string) =>
     await this.ormrepository.findOne({ id: veicle });
 
