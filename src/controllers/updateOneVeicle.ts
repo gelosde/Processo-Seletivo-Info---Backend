@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
 import veicleRepoitory from "../repositories/veicles/viecles.repository";
-import { Iveicles } from "../repositories/veicles/vaicles.interface";
 
 const updateVeicle = async (req: Request, res: Response) => {
   const id = req.params.id;
@@ -8,7 +7,14 @@ const updateVeicle = async (req: Request, res: Response) => {
   const bodyModif = req.body;
 
   const idVerify = await new veicleRepoitory().getOneVeicle(id);
-
+  if (req.body.plate) {
+    const findPlate = await new veicleRepoitory().getOneVeiclePlate(
+      req.body.plate
+    );
+    if (findPlate) {
+      return res.status(203).json({ msg: "this plate alread is taken" });
+    }
+  }
   if (!idVerify) {
     return res.status(404).json({ smg: "veicle not found" });
   }
@@ -40,3 +46,5 @@ const updateVeicle = async (req: Request, res: Response) => {
 
   return res.status(200).json({ msg: "veicle is modificated", isModificate });
 };
+
+export default updateVeicle;
