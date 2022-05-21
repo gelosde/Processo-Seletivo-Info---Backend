@@ -1,6 +1,6 @@
 import yup from "yup";
 
-const schemaVeicle = yup.object().shape({
+const schema = yup.object().shape({
   plate: yup
     .string()
     .matches(/@"^[a-zA-Z]{3}\-\d{4}$"/, "invalid plate")
@@ -25,4 +25,4 @@ const schemaVeicle = yup.object().shape({
   year: yup.date().required("year is missing"),
 });
 
-export default schemaVeicle;
+export default schema;
