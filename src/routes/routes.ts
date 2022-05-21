@@ -9,7 +9,7 @@ router.post(
   midleSchema(schema),
   actionVeicles.registerVeicle
 );
-router.post("/veicle/delete/:toDelete", actionVeicles.deleteVeicle);
+router.delete("/veicle/:toDelete", actionVeicles.deleteVeicle);
 
 router.get("/veicle/see/:finder", actionVeicles.getOneVeicle);
 
