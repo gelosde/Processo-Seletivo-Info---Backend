@@ -9,15 +9,16 @@ router.post(
   midleSchema(schema),
   actionVeicles.registerVeicle
 );
+
 router.delete("/veicle/:toDelete", actionVeicles.deleteVeicle);
 
-router.delete("/arquive/:id", actionVeicles.deletArquive);
+router.delete("/veicle/arquive/:id", actionVeicles.deletArquive);
 
 router.get("/veicle/see/:finder", actionVeicles.getOneVeicle);
 
 router.get("/veicle/list", actionVeicles.listAllVeicles);
 
-router.get("/veicle/download/:id", actionVeicles.fileDataDownload);
+router.get("/veicle/createarquive/:id", actionVeicles.fileDataCreate);
 
 router.patch("/veicle/update/:id", actionVeicles.updateVeicle);
 

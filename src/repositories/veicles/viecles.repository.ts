@@ -21,9 +21,22 @@ class veicleRepoitory implements IveiclesRepo {
   getallVeicle = async () => await this.ormrepository.find();
 
   updateVeicle = async (
-    veicleInitStatus: Iveicles,
-    modificatedVeicle: Iveicles
-  ) => await this.ormrepository.update(veicleInitStatus, modificatedVeicle);
+    veicleInitStatus: string,
+    plate: string,
+    chassis: string,
+    renavam: number,
+    model: string,
+    brand: string,
+    year: string
+  ) =>
+    await this.ormrepository.update(veicleInitStatus, {
+      plate: plate,
+      chassis: chassis,
+      renavam: renavam,
+      model: model,
+      brand: brand,
+      year: year,
+    });
 
   deleteVeicle = async (id: string) =>
     await this.ormrepository.delete({ id: id });

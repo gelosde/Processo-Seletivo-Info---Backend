@@ -1,7 +1,7 @@
 import { DeleteResult } from "typeorm";
 
 interface Iveicles {
-  id?: string;
+  id: string;
 
   plate: string;
 

@@ -40,11 +40,16 @@ const updateVeicle = async (req: Request, res: Response) => {
   }
 
   const isModificate = await new veicleRepoitory().updateVeicle(
-    idVerify,
-    modifiVeicle
+    idVerify.id,
+    modifiVeicle.plate,
+    modifiVeicle.chassis,
+    modifiVeicle.renavam,
+    modifiVeicle.model,
+    modifiVeicle.brand,
+    modifiVeicle.year
   );
-
-  return res.status(200).json({ msg: "veicle is modificated", isModificate });
+  console.log(isModificate);
+  return res.status(200).json({ msg: "veicle is modificated", modifiVeicle });
 };
 
 export default updateVeicle;

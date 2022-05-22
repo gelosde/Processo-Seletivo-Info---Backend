@@ -6,6 +6,7 @@
   "author": "gelosde <angelokvieiragmail.com>",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.20.0",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "faker": "^5.5.3",
@@ -27,6 +28,7 @@
     "@types/uuid": "^8.3.4",
     "@types/yup": "^0.29.13",
     "jest": "^28.1.0",
+    "mocha": "^10.0.0",
     "sqlite3": "^5.0.5",
     "supertest": "^6.2.2",
     "ts-jest": "^28.0.2",
@@ -38,8 +40,7 @@
     "dev": "ts-node-dev --transpile-only --ignore-watch  node_modules src/server.ts",
     "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js",
     "start": "node .build/src/server.js",
-    "build": "tsc",
-    "test": "jest"
+    "build": "tsc"
   },
   "engines": {
     "node": "16.x"
