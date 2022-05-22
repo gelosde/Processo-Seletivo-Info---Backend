@@ -34,14 +34,6 @@ const fileDataDownload = async (req: Request, res: Response) => {
     );
   }
 
-  if (!id) {
-    fs.unlink("../arquive/allVeicles.txt", (err) => {
-      if (err) throw err;
-    });
-  } else
-    fs.unlink(`../arquive/${id}.txt`, (err) => {
-      if (err) throw err;
-    });
   return res.status(200).json({ msg: "download finished" });
 };
 

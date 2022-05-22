@@ -10,6 +10,8 @@ import getOneVeicle from "./getOneVeicle";
 
 import updateVeicle from "./updateOneVeicle";
 
+import deletArquive from "./deletArquive";
+
 export {
   fileDataDownload,
   registerVeicle,
@@ -17,4 +19,5 @@ export {
   listAllVeicles,
   getOneVeicle,
   updateVeicle,
+  deletArquive,
 };

@@ -8,12 +8,15 @@ const getOneVeicle = async (req: Request, res: Response) => {
 
   const idFound = await new veicleRepoitory().getOneVeicle(veicleInfo);
 
+  let code: Response<any, Record<string, any>>;
   if (plateFound) {
-    return res.status(302).json({ plateFound });
+    code = res.status(302).json({ plateFound });
   } else if (idFound) {
-    return res.status(302).json({ idFound });
+    code = res.status(302).json({ idFound });
   } else
-    return res.status(404).json({ msg: "don't have any plate or id found" });
+    code = res.status(404).json({ msg: "don't have any plate or id found" });
+
+  return code;
 };
 
 export default getOneVeicle;
