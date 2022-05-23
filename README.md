@@ -2,6 +2,8 @@
 
 #rota Post para inscrever um novo veiculo
 
+rodar a api yarn dev
+
 http://localhost:3000/veicle/register
 
 No body
