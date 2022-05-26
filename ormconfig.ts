@@ -1,7 +1,5 @@
-import dotenv from "dotenv";
-import path from "path";
-// const dotenv = require("dotenv");
-// const path = require("path");
+import dotenv = require("dotenv");
+import path = require("path");
 
 dotenv.config();
 
@@ -32,6 +30,3 @@ const dbProductionConfig = {
 
 module.exports =
   process.env.NODE_ENV === "production" ? dbProductionConfig : dbConfig;
-
-
-  

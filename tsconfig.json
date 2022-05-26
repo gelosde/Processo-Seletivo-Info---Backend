@@ -10,7 +10,6 @@
     "sourceMap": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "typeRoots": ["./src/@types"],
-    "strict": false
+    "typeRoots": ["./src/@types"]
   }
 }
