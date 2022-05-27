@@ -6,7 +6,7 @@ const connection = {
   },
 
   async close() {
-    await getConnection().close();
+    await getConnection("deault").close();
   },
 
   async clear() {

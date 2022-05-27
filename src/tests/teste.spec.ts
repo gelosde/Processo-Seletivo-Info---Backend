@@ -1,28 +1,27 @@
 import app from "../app";
-// import "reflect-metadata";
+
 import {
   expect,
   it,
   describe,
   beforeEach,
-  afterEach,
+  afterAll,
   beforeAll,
 } from "@jest/globals";
 import request from "supertest";
-// import connection from "./connect";
+import connection from "./connect";
 describe("tests for routes off veicle tratament", () => {
-  afterEach(() => {});
-  // beforeAll(async () => {
-  //   await connection.create();
-  // });
+  beforeAll(async () => {
+    await connection.create();
+  });
 
-  // afterAll(async () => {
-  //   await connection.close();
-  // });
+  afterAll(async () => {
+    await connection.close();
+  });
 
-  // beforeEach(async () => {
-  //   await connection.clear();
-  // });
+  beforeEach(async () => {
+    await connection.clear();
+  });
   // it("this test is to save a new veicle info", async () => {
   //   const saveNewVeicle = await request(app)
   //     .post("/veicle/register")
@@ -30,6 +29,7 @@ describe("tests for routes off veicle tratament", () => {
 
   //   expect(saveNewVeicle.status).toBe(201);
   // });
+
   it("this test is to get all veicles info", async () => {
     const getAllVeicles = await request(app).get("/veicle/list");
 
